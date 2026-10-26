@@ -105,17 +105,16 @@ The commands below use the BPR run (`EXP-003_bpr_d32_311`); the LightGCN run
 | Figure 9 | Neutral vs gender prompt | `report_figures --only 10_neutral_vs_gender` | `EXP-006_llmrec_311/*_req20_*_unseen/` |
 | Figure 10 | How the gender prompt changes the lists | `report_figures --only 11_romance_shift` | `EXP-006_llmrec_311/*_req20_*_unseen/lists.jsonl` |
 | Figure 11 | Gender AUC by age group | `report_figures --only 12_age_slices` | `age_slices/age_slices.json` (`src.report.age_slice_table`) |
-| Table 1 | Attacker tiers | written by hand | — |
-| Table 2 | ML-1M statistics | `src.preprocess.ml1m` | `data/ml-1m-311/stats.json` |
-| Table 3 | Effectiveness and women − men gap | `report_tables` (`effectiveness`) | `runs/effectiveness_by_gender/` |
-| Table 4 | List concentration | `report_tables` (`concentration`) | `lists*.jsonl` |
-| Table 5 | AUC of every recommender and tier | `src.report.appendix_table --latex ...` | all of the above |
+| Table 1 | ML-1M statistics | `src.preprocess.ml1m` | `data/ml-1m-311/stats.json` |
+| Table 2 | Effectiveness and women − men gap | `report_tables` (`effectiveness`) | `runs/effectiveness_by_gender/` |
+| Table 3 | List concentration | `report_tables` (`concentration`) | `lists*.jsonl` |
+| Table 4 | AUC of every recommender and tier | `src.report.appendix_table --latex ...` | all of the above |
+| Table 5 | Effectiveness change, neutral → gender | `report_tables` (`effectiveness_change`) | `runs/effectiveness_by_gender/` |
 | Table 6 | LLM non-answers | `report_tables` (`nonanswers`) | `llm_aia/preds_*.jsonl` |
-| Table 7 | Effectiveness change, neutral → gender | `report_tables` (`effectiveness_change`) | `runs/effectiveness_by_gender/` |
 | Section 5.3.3 | Genre gaps between women's and men's lists | `report_tables` (`genre_gaps`) | `lists.jsonl` |
 
 `report_figures` writes each figure as `docs/report_figs/<name>.pdf`; the report includes them
-from `figs/`. Some tables were shortened by hand in the report (e.g. Table 3 without the CIs).
+from `figs/`. Some tables were shortened by hand in the report (e.g. Table 2 without the CIs).
 
 ## Repository layout
 
@@ -134,7 +133,7 @@ runs/
   EXP-003_bpr_d32_311/        BPR: aggregate results of every attack
   EXP-004_lightgcn_d32_311/   LightGCN: same structure
   EXP-006_llmrec_311/         LLM recommender: attack summaries
-  effectiveness_by_gender/    HR@10 / NDCG@10 by gender (Tables 3 and 7)
+  effectiveness_by_gender/    HR@10 / NDCG@10 by gender (Tables 2 and 5)
 docs/               the report's figures (report_figs/) and tables (report_tables/)
 ```
 

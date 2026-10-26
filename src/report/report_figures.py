@@ -215,8 +215,8 @@ def fig_classifiers(out: Path) -> None:
 
 # ------------------------------------------------------------------ 06 popularity (single column)
 def fig_popularity(out: Path) -> None:
-    arms = [("full", "Full\nlist"), ("tail_only", "Tail only\n(head\nremoved)"),
-            ("random_ablation", "Same no.\nremoved\nat random"), ("head_only", "Head only\n(head\nkept)")]
+    arms = [("full", "Full\nlist"), ("tail_only", "Without\n10 most-\nrecommended"),
+            ("random_ablation", "Same no.\nremoved\nat random"), ("head_only", "Only\n10 most-\nrecommended")]
     fig, ax = plt.subplots(figsize=(COL_W, 2.45))
     w = 0.34
     for k, (run, color, name) in enumerate(((LGCN, C_LGCN, "LightGCN"), (BPR, C_BPR, "BPR"))):
