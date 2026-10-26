@@ -1,0 +1,31 @@
+{
+  "attribute": "gender",
+  "classifier": "logistic_regression",
+  "label_classes": [
+    "female",
+    "male"
+  ],
+  "n_train": 3367,
+  "n_test": 500,
+  "embedding_dim": 32,
+  "protocol": {
+    "split": "fixed_single_split",
+    "scaler": "StandardScaler",
+    "seed": 2024,
+    "max_iter": 1000
+  },
+  "baselines": {
+    "majority_bacc": 0.5,
+    "majority_f1_micro": 0.696,
+    "chance_bacc_balanced": 0.5,
+    "chance_auc": 0.5
+  },
+  "metrics": {
+    "bacc": 0.5251058681185723,
+    "f1_micro": 0.7,
+    "f1_macro": 0.4781664857643817,
+    "accuracy": 0.7,
+    "auc": 0.6759301270417423
+  },
+  "input": "list_derived_embedding_rank_pool"
+}

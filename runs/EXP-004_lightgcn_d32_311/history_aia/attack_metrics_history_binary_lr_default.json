@@ -1,0 +1,30 @@
+{
+  "protocol": {
+    "attacker": "raw interaction history (Slokom et al. 2021 / PerBlur setup)",
+    "weights": "binary",
+    "row_normalisation": "L2 (sklearn.preprocessing.normalize)",
+    "split": "fixed_single_split",
+    "attribute": "gender",
+    "n_train": 3367,
+    "n_test": 500,
+    "n_items": 3094,
+    "seed": 2024,
+    "n_bootstrap": 1000,
+    "train_csv": "data/ml-1m-311/splits/train.csv",
+    "test_lists": "runs/EXP-004_lightgcn_d32_311/lists.jsonl",
+    "train_pool_lists": "runs/EXP-004_lightgcn_d32_311/lists_train_pool.jsonl",
+    "generated_at_iso": "2026-09-20T22:18:51.290527+00:00",
+    "git_commit": "d163448"
+  },
+  "classifier": "lr",
+  "variant": "default",
+  "bacc": 0.6996748336358136,
+  "f1_macro": 0.7203947368421053,
+  "accuracy": 0.796,
+  "auc": 0.8694797338173019,
+  "auc_ci95": [
+    0.8352427843686199,
+    0.9009789469433958
+  ],
+  "pred_male_share": 0.824
+}

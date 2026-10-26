@@ -1,0 +1,103 @@
+{
+  "attribute": "gender",
+  "classifier": "svm",
+  "label_classes": [
+    "female",
+    "male"
+  ],
+  "label_counts": {
+    "female": 152,
+    "male": 348
+  },
+  "n_users": 500,
+  "embedding_dim": 32,
+  "protocol": {
+    "n_splits": 5,
+    "approx_train_test": "80/20 per fold (StratifiedKFold)",
+    "scaler": "StandardScaler",
+    "seed": 2024,
+    "kernel": "rbf"
+  },
+  "baselines": {
+    "majority_bacc": 0.5,
+    "majority_f1_micro": 0.696,
+    "chance_bacc_balanced": 0.5,
+    "chance_auc": 0.5
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5,
+      "f1_micro": 0.7,
+      "f1_macro": 0.4117647058823529,
+      "accuracy": 0.7,
+      "auc": 0.560952380952381
+    },
+    {
+      "fold": 1,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5,
+      "f1_micro": 0.7,
+      "f1_macro": 0.4117647058823529,
+      "accuracy": 0.7,
+      "auc": 0.5914285714285714
+    },
+    {
+      "fold": 2,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5,
+      "f1_micro": 0.7,
+      "f1_macro": 0.4117647058823529,
+      "accuracy": 0.7,
+      "auc": 0.5842857142857143
+    },
+    {
+      "fold": 3,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5,
+      "f1_micro": 0.69,
+      "f1_macro": 0.40828402366863903,
+      "accuracy": 0.69,
+      "auc": 0.5315568022440392
+    },
+    {
+      "fold": 4,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5,
+      "f1_micro": 0.69,
+      "f1_macro": 0.40828402366863903,
+      "accuracy": 0.69,
+      "auc": 0.5666199158485273
+    }
+  ],
+  "aggregate": {
+    "bacc": {
+      "mean": 0.5,
+      "std": 0.0
+    },
+    "f1_micro": {
+      "mean": 0.696,
+      "std": 0.00489897948556636
+    },
+    "f1_macro": {
+      "mean": 0.41037243299686743,
+      "std": 0.0017051790760760053
+    },
+    "accuracy": {
+      "mean": 0.696,
+      "std": 0.00489897948556636
+    },
+    "auc": {
+      "mean": 0.5669686769518466,
+      "std": 0.020921207144985215
+    }
+  },
+  "input": "list_derived_embedding_rank_pool",
+  "lists_path": "runs/EXP-004_lightgcn_d32_311/lists.jsonl"
+}

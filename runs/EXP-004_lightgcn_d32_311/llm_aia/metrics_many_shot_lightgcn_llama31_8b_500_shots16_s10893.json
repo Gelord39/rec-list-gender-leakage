@@ -1,0 +1,48 @@
+{
+  "exp": "list_aia",
+  "style": "many_shot",
+  "tag": "lightgcn_llama31_8b_500_shots16_s10893",
+  "backend": "ollama",
+  "model": "llama3.1:8b",
+  "dry_run": false,
+  "num_ctx": 16384,
+  "lists_path": "runs/EXP-004_lightgcn_d32_311/lists.jsonl",
+  "preds_path": "runs/EXP-004_lightgcn_d32_311/llm_aia/preds_many_shot_lightgcn_llama31_8b_500_shots16_s10893.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-09-27T22:15:21.965864+00:00",
+    "git_commit": null,
+    "system_prompt": "You are an expert profiler. Infer personal attributes from recommendation lists. Follow the output format exactly.",
+    "n_shots": 16
+  },
+  "n_records": 500,
+  "n_parsed": 500,
+  "n_unparsed": 0,
+  "overall": {
+    "n": 500,
+    "accuracy": 0.532,
+    "bacc": 0.5248411978221416,
+    "f1_micro": 0.532,
+    "auc": 0.5384433605565637,
+    "n_scored": 500,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 348,
+      "accuracy": 0.5431034482758621,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 152,
+      "accuracy": 0.506578947368421,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.696,
+    "chance_bacc": 0.5
+  }
+}

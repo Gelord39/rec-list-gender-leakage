@@ -1,0 +1,256 @@
+{
+  "input": "title_text_embedding",
+  "description": "mean of sentence embeddings of rec-list titles",
+  "text_model": "sentence-transformers/all-MiniLM-L6-v2",
+  "n_unique_titles": 358,
+  "embedding_dim": 384,
+  "variants": {
+    "lr_default": {
+      "classifier": "lr",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5415910465819722,
+        "f1_macro": 0.5223206531179434,
+        "accuracy": 0.692,
+        "auc": 0.6924436630369026,
+        "recall_male": 0.9252873563218391,
+        "recall_female": 0.15789473684210525,
+        "pred_male_share": 0.9,
+        "auc_ci95": [
+          0.6420879097608688,
+          0.7377079493683225
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.020619399275139828,
+          0.053663857052514724
+        ]
+      }
+    },
+    "lr_balanced": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6635662431941924,
+        "f1_macro": 0.625,
+        "accuracy": 0.64,
+        "auc": 0.693521249243799,
+        "recall_male": 0.603448275862069,
+        "recall_female": 0.7236842105263158,
+        "pred_male_share": 0.504,
+        "auc_ci95": [
+          0.6438119736164912,
+          0.7385358146067416
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.02116087519318999,
+          0.05293061869292631
+        ]
+      }
+    },
+    "lr_balanced_cv": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": 0.001,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6565713853599516,
+        "f1_macro": 0.6212992990898629,
+        "accuracy": 0.638,
+        "auc": 0.7010927102238353,
+        "recall_male": 0.6091954022988506,
+        "recall_female": 0.7039473684210527,
+        "pred_male_share": 0.514,
+        "auc_ci95": [
+          0.653139272816206,
+          0.7472850993336094
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.012627925556027694,
+          0.04543141429751129
+        ]
+      }
+    },
+    "mlp_default": {
+      "classifier": "mlp",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.6134679370840895,
+        "f1_macro": 0.6142857142857143,
+        "accuracy": 0.676,
+        "auc": 0.6544634754990925,
+        "recall_male": 0.7729885057471264,
+        "recall_female": 0.45394736842105265,
+        "pred_male_share": 0.704,
+        "auc_ci95": [
+          0.6033996350332006,
+          0.7020154912956036
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0745594119098497,
+          0.03199551410250281
+        ]
+      }
+    },
+    "mlp_balanced": {
+      "classifier": "mlp",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.582047791893527,
+        "f1_macro": 0.5807245080500895,
+        "accuracy": 0.64,
+        "auc": 0.6457388082274651,
+        "recall_male": 0.7298850574712644,
+        "recall_female": 0.4342105263157895,
+        "pred_male_share": 0.68,
+        "auc_ci95": [
+          0.5947604218900728,
+          0.6946662451290019
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0770223851818933,
+          0.03423103371725319
+        ]
+      }
+    },
+    "svm_rbf_default": {
+      "classifier": "svm_rbf",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5162583182093164,
+        "f1_macro": 0.4572679371149657,
+        "accuracy": 0.698,
+        "auc": 0.6252268602540835,
+        "recall_male": 0.9798850574712644,
+        "recall_female": 0.05263157894736842,
+        "pred_male_share": 0.97,
+        "auc_ci95": [
+          0.5722181594660444,
+          0.6774241500036438
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.05504910905637235,
+          0.037229685334464246
+        ]
+      }
+    },
+    "svm_rbf_balanced": {
+      "classifier": "svm_rbf",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6392921960072595,
+        "f1_macro": 0.6110660173160174,
+        "accuracy": 0.632,
+        "auc": 0.6921884452510586,
+        "recall_male": 0.6206896551724138,
+        "recall_female": 0.6578947368421053,
+        "pred_male_share": 0.536,
+        "auc_ci95": [
+          0.6416914865609876,
+          0.738535419530966
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0037295413377415897,
+          0.07356922834085987
+        ]
+      }
+    },
+    "svm_linear_default": {
+      "classifier": "svm_linear",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5366379310344828,
+        "f1_macro": 0.5074341560161535,
+        "accuracy": 0.698,
+        "auc": 0.6833976104053237,
+        "recall_male": 0.9482758620689655,
+        "recall_female": 0.125,
+        "pred_male_share": 0.926,
+        "auc_ci95": [
+          0.6311722128259282,
+          0.7292205963363144
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.037347978959025446,
+          0.03391750347985713
+        ]
+      }
+    },
+    "svm_linear_balanced": {
+      "classifier": "svm_linear",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6541137326073805,
+        "f1_macro": 0.6166666666666667,
+        "accuracy": 0.632,
+        "auc": 0.6909974289171205,
+        "recall_male": 0.5977011494252874,
+        "recall_female": 0.7105263157894737,
+        "pred_male_share": 0.504,
+        "auc_ci95": [
+          0.6403742505695165,
+          0.7367744220348637
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.030622966859835194,
+          0.041602781836467366
+        ]
+      }
+    }
+  },
+  "protocol": {
+    "split": "fixed_single_split",
+    "attribute": "gender",
+    "label_classes": [
+      "female",
+      "male"
+    ],
+    "score": "LR decision_function, positive = male",
+    "n_train": 3367,
+    "n_test": 500,
+    "seed": 2024,
+    "cv_folds_for_hyperparams": 5,
+    "classifiers": [
+      "lr",
+      "mlp",
+      "svm_rbf",
+      "svm_linear"
+    ],
+    "C_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "lambda_grid": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "n_bootstrap": 1000,
+    "test_lists": "runs/EXP-004_lightgcn_d32_311/lists.jsonl",
+    "train_pool_lists": "runs/EXP-004_lightgcn_d32_311/lists_train_pool.jsonl",
+    "model": "LightGCN",
+    "items_csv": "data/ml-1m-311/splits/items.csv",
+    "text_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "checkpoint": "runs/EXP-004_lightgcn_d32_311/checkpoint/LightGCN-Aug-30-2026_23-00-46.pth",
+    "generated_at_iso": "2026-09-20T17:39:00.931159+00:00",
+    "git_commit": "9b43452"
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "exp": "list_aia",
+  "style": "zero_shot",
+  "tag": "lightgcn_llama31_8b_500",
+  "backend": "ollama",
+  "model": "llama3.1:8b",
+  "dry_run": false,
+  "num_ctx": 16384,
+  "lists_path": "runs/EXP-004_lightgcn_d32_311/lists.jsonl",
+  "preds_path": "runs/EXP-004_lightgcn_d32_311/llm_aia/preds_zero_shot_lightgcn_llama31_8b_500.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-09-27T13:49:54.751728+00:00",
+    "git_commit": null,
+    "system_prompt": "You are an expert profiler. Infer personal attributes from recommendation lists. Follow the output format exactly.",
+    "example_rendered_prompt": "Based ONLY on the following movie recommendation list for one anonymous user, infer the user's gender.\n\nRecommendation list:\n1. Forrest Gump (1994)\n2. Hunt for Red October, The (1990)\n3. Silence of the Lambs, The (1991)\n4. Lethal Weapon (1987)\n5. Alien (1979)\n6. Predator (1987)\n7. Die Hard 2 (1990)\n8. Bug's Life, A (1998)\n9. Jaws (1975)\n10. Romancing the Stone (1984)\n\nReply with exactly one word: male or female.",
+    "n_shots": 0,
+    "few_shot_examples_used": null
+  },
+  "n_records": 500,
+  "n_parsed": 500,
+  "n_unparsed": 0,
+  "overall": {
+    "n": 500,
+    "accuracy": 0.698,
+    "bacc": 0.510700241984271,
+    "f1_micro": 0.698,
+    "auc": 0.48941318814277074,
+    "n_scored": 500,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 348,
+      "accuracy": 0.9885057471264368,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 152,
+      "accuracy": 0.03289473684210526,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.696,
+    "chance_bacc": 0.5
+  }
+}

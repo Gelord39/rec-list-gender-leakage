@@ -1,0 +1,53 @@
+{
+  "exp": "list_aia",
+  "style": "zero_shot",
+  "tag": "real_v1",
+  "backend": "ollama",
+  "model": "llama3.2",
+  "dry_run": false,
+  "lists_path": "runs/EXP-003_bpr_d32_311/lists.jsonl",
+  "preds_path": "runs/EXP-003_bpr_d32_311/llm_aia/preds_zero_shot_real_v1.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-08-23T20:43:20.640769+00:00",
+    "git_commit": "9309c0a",
+    "system_prompt": "You are an expert profiler. Infer personal attributes from recommendation lists. Follow the output format exactly.",
+    "example_rendered_prompt": "Based ONLY on the following movie recommendation list for one anonymous user, infer the user's gender.\n\nRecommendation list:\n1. Bug's Life, A (1998)\n2. Forrest Gump (1994)\n3. Alien (1979)\n4. Beetlejuice (1988)\n5. Silence of the Lambs, The (1991)\n6. Lethal Weapon (1987)\n7. Hunt for Red October, The (1990)\n8. Shakespeare in Love (1998)\n9. Willy Wonka and the Chocolate Factory (1971)\n10. Romancing the Stone (1984)\n\nReply with exactly one word: male or female.",
+    "few_shot_examples_used": null
+  },
+  "n_records": 100,
+  "n_parsed": 100,
+  "n_unparsed": 0,
+  "overall": {
+    "n": 100,
+    "accuracy": 0.78,
+    "bacc": 0.5733333333333334,
+    "f1_micro": 0.78,
+    "auc": null,
+    "n_scored": 0,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 75,
+      "accuracy": 0.9866666666666667,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 25,
+      "accuracy": 0.16,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.75,
+    "chance_bacc": 0.5
+  },
+  "reparsed": {
+    "at": "2026-09-20T22:46:11.614339+00:00",
+    "reason": "parse_gender fix: last Gender: line only; non-male/female there = abstention",
+    "labels_changed": 0
+  }
+}

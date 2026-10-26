@@ -1,0 +1,76 @@
+{
+  "exp": "EXP-006_llmrec_311",
+  "variant": "sensitive",
+  "history_len": 50,
+  "model_slug": "llama31_8b",
+  "list_version": "raw",
+  "sim_threshold": 0.75,
+  "diagnostics": {
+    "overall": {
+      "n_users": 3867,
+      "mean_parsed": 11.020170674941815,
+      "match_rate": 0.8577496186788689,
+      "mean_rec_len": 8.723558313938453,
+      "share_full_10": 0.42022239462115335,
+      "share_under_5": 0.021980863718644945,
+      "share_empty": 0.0031031807602792862,
+      "dup_rate": 0.036303449785243344,
+      "raw_seen_rate": 0.19475899685776962,
+      "raw_seen_in_prompt_rate": 0.0282504298334025,
+      "ambiguous_title_rate": 0.010434576391770914
+    },
+    "by_gender": {
+      "male": {
+        "n_users": 2752,
+        "mean_parsed": 10.921148255813954,
+        "match_rate": 0.848511063051073,
+        "mean_rec_len": 8.640261627906977,
+        "share_full_10": 0.389171511627907,
+        "share_under_5": 0.02252906976744186,
+        "share_empty": 0.0032703488372093025,
+        "dup_rate": 0.03352678221315975,
+        "raw_seen_rate": 0.21570359155521912,
+        "raw_seen_in_prompt_rate": 0.026873580620741862,
+        "ambiguous_title_rate": 0.007906468163848936
+      },
+      "female": {
+        "n_users": 1115,
+        "mean_parsed": 11.26457399103139,
+        "match_rate": 0.8798566878980891,
+        "mean_rec_len": 8.92914798206278,
+        "share_full_10": 0.4968609865470852,
+        "share_under_5": 0.02062780269058296,
+        "share_empty": 0.0026905829596412557,
+        "dup_rate": 0.04271106687177631,
+        "raw_seen_rate": 0.14473684210526316,
+        "raw_seen_in_prompt_rate": 0.03153877059059863,
+        "ambiguous_title_rate": 0.016472478907191643
+      }
+    },
+    "concentration": {
+      "distinct_items": 754,
+      "top10_share": 0.2509930633781941,
+      "top50_share": 0.647180885753246
+    }
+  },
+  "rec_metrics": {
+    "n_users_with_test_items": 695,
+    "hit@10": 0.34532374100719426,
+    "precision@10": 0.07035971223021584,
+    "ndcg@10": 0.07318081268829496,
+    "note": "ID-level after title->ID matching; Stairway scores titles against the ground truth directly"
+  },
+  "provenance": {
+    "generated_at_iso": "2026-09-27T21:24:46.136429+00:00",
+    "git": {
+      "commit": "9a895018d1eedcca21d8250f81afe9f9b43ffce5",
+      "dirty": true
+    },
+    "responses": "runs/EXP-006_llmrec_311/responses_sensitive_hist50_llama31_8b.jsonl",
+    "system_prompt": "A chat between a curious user and an artificial intelligence assistant. The assistant gives helpful, detailed, and polite answers to the user's questions.",
+    "templates": {
+      "source": "You are a movie recommender. If a {} user whose age is {} years old and whose occupation is {} has watched the following movies, listed chronologically from earliest to latest, and rated them positively:\n{},\nthen you should recommend the following movies: {}. Now that the user has watched the recommended movies, you should recommend 10 other movies from the year between 1919 and 2000 (inclusive) that the user is most likely to watch next. You should order them by probability and compact them in one line split by commas. Do not output the probability. Do not re-recommend movies that have been watched by the user. Do not output other words.",
+      "source_no_val": "You are a movie recommender. A {} user whose age is {} years old and whose occupation is {} has watched the following movies, listed chronologically from earliest to latest, and rated them positively:\n{}.\nYou should recommend 10 other movies from the year between 1919 and 2000 (inclusive) that the user is most likely to watch next. You should order them by probability and compact them in one line split by commas. Do not output the probability Do not re-recommend movies that have been watched by the user. Do not output other words."
+    }
+  }
+}

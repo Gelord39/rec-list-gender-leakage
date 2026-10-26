@@ -1,0 +1,34 @@
+{
+  "attribute": "gender",
+  "classifier": "mlp",
+  "label_classes": [
+    "female",
+    "male"
+  ],
+  "n_train": 3367,
+  "n_test": 500,
+  "embedding_dim": 32,
+  "protocol": {
+    "split": "fixed_single_split",
+    "scaler": "StandardScaler",
+    "seed": 2024,
+    "hidden_size": 100,
+    "activation": "relu",
+    "solver": "adam",
+    "max_iter": 500
+  },
+  "baselines": {
+    "majority_bacc": 0.5,
+    "majority_f1_micro": 0.696,
+    "chance_bacc_balanced": 0.5,
+    "chance_auc": 0.5
+  },
+  "metrics": {
+    "bacc": 0.5228372655777375,
+    "f1_micro": 0.702,
+    "f1_macro": 0.4695205747691168,
+    "accuracy": 0.702,
+    "auc": 0.6766107078039927
+  },
+  "input": "list_derived_embedding_mean_pool"
+}

@@ -1,0 +1,103 @@
+{
+  "attribute": "gender",
+  "classifier": "svm",
+  "label_classes": [
+    "female",
+    "male"
+  ],
+  "label_counts": {
+    "female": 1116,
+    "male": 2753
+  },
+  "n_users": 3869,
+  "embedding_dim": 32,
+  "protocol": {
+    "n_splits": 5,
+    "approx_train_test": "80/20 per fold (StratifiedKFold)",
+    "scaler": "StandardScaler",
+    "seed": 2024,
+    "kernel": "rbf"
+  },
+  "baselines": {
+    "majority_bacc": 0.5,
+    "majority_f1_micro": 0.7115533729645903,
+    "chance_bacc_balanced": 0.5,
+    "chance_auc": 0.5
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.6283398305567537,
+      "f1_micro": 0.7596899224806202,
+      "f1_macro": 0.6402339064374251,
+      "accuracy": 0.7596899224806202,
+      "auc": 0.8055064985798346
+    },
+    {
+      "fold": 1,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.6467572208703296,
+      "f1_micro": 0.772609819121447,
+      "f1_macro": 0.662571337983513,
+      "accuracy": 0.772609819121447,
+      "auc": 0.8036916165471666
+    },
+    {
+      "fold": 2,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.6752663319036729,
+      "f1_micro": 0.7751937984496124,
+      "f1_macro": 0.6910108750516222,
+      "accuracy": 0.7751937984496124,
+      "auc": 0.7831582202762201
+    },
+    {
+      "fold": 3,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.6761850649350649,
+      "f1_micro": 0.7842377260981912,
+      "f1_macro": 0.6947971146240393,
+      "accuracy": 0.7842377260981912,
+      "auc": 0.8127435064935065
+    },
+    {
+      "fold": 4,
+      "n_train": 3096,
+      "n_test": 773,
+      "bacc": 0.649796167957603,
+      "f1_micro": 0.7710219922380336,
+      "f1_macro": 0.6656157664362018,
+      "accuracy": 0.7710219922380336,
+      "auc": 0.7864900122299225
+    }
+  ],
+  "aggregate": {
+    "bacc": {
+      "mean": 0.6552689232446849,
+      "std": 0.01824805467453285
+    },
+    "f1_micro": {
+      "mean": 0.772550651677581,
+      "std": 0.007890660166519318
+    },
+    "f1_macro": {
+      "mean": 0.6708458001065603,
+      "std": 0.02006591001815981
+    },
+    "accuracy": {
+      "mean": 0.772550651677581,
+      "std": 0.007890660166519318
+    },
+    "auc": {
+      "mean": 0.7983179708253301,
+      "std": 0.011474891896491566
+    }
+  },
+  "run_dir": "runs/EXP-003_bpr_d32_311",
+  "source_rec_metrics": "runs/EXP-003_bpr_d32_311/rec_metrics.json"
+}

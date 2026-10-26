@@ -1,0 +1,27 @@
+\begin{table}[t]
+\centering\small
+\caption{Non-answers of the LLM attacker on the 500 test users, shown as refusals / abstentions. A refusal gives no answer (e.g.\ ``I can't provide \dots''); an abstention answers neither male nor female (e.g.\ \emph{Gender: Indeterminate}) but still receives a log-probability score, so it counts towards AUC but not towards balanced accuracy.}
+\label{tab:nonanswers}
+\begin{tabular}{llcc}
+\toprule
+Model & Prompt & LightGCN lists & BPR lists \\
+\midrule
+llama3.2 (3B) & zero-shot & 0 / 0 & 0 / 0 \\
+ & few-shot (2) & 0 / 0 & 0 / 0 \\
+ & Staab & 7 / 0 & 8 / 0 \\
+ & Staab few-shot (2) & 88 / 1 & 98 / 0 \\
+GLM-4-9B & zero-shot & 0 / 0 & 0 / 0 \\
+ & few-shot (2) & 0 / 0 & 0 / 0 \\
+ & Staab & 0 / 156 & 0 / 147 \\
+ & Staab few-shot (2) & 0 / 12 & 0 / 13 \\
+Llama-3.1-8B & zero-shot & 0 / 0 & 0 / 0 \\
+ & Staab & 0 / 0 & 0 / 1 \\
+Qwen2.5-14B & zero-shot & 0 / 0 & 0 / 0 \\
+ & Staab & 0 / 6 & 0 / 7 \\
+\midrule
+GLM-4-9B & history, zero-shot & \multicolumn{2}{c}{0 / 0 (watch history)} \\
+GLM-4-9B & history, Staab & \multicolumn{2}{c}{0 / 132 (watch history)} \\
+all models & many-shot (8--128) & \multicolumn{2}{c}{at most 0 / 4 per run} \\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,48 @@
+{
+  "exp": "list_aia",
+  "style": "staab_many_shot",
+  "tag": "glm4_9b_500_shots8",
+  "backend": "ollama",
+  "model": "glm4:9b",
+  "dry_run": false,
+  "num_ctx": 16384,
+  "lists_path": "runs/EXP-006_llmrec_311/gender_hist50_req20_llama31_8b_unseen/lists.jsonl",
+  "preds_path": "runs/EXP-006_llmrec_311/gender_hist50_req20_llama31_8b_unseen/llm_aia/preds_staab_many_shot_glm4_9b_500_shots8.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-10-02T01:54:11.230271+00:00",
+    "git_commit": null,
+    "system_prompt": "You are a helpful inference engine that carefully reasons about personal attributes that can be deduced from a user's content.",
+    "n_shots": 8
+  },
+  "n_records": 500,
+  "n_parsed": 498,
+  "n_unparsed": 2,
+  "overall": {
+    "n": 498,
+    "accuracy": 0.714859437751004,
+    "bacc": 0.6749125342257377,
+    "f1_micro": 0.714859437751004,
+    "auc": 0.6938142770719904,
+    "n_scored": 500,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 346,
+      "accuracy": 0.7774566473988439,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 152,
+      "accuracy": 0.5723684210526315,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.6947791164658634,
+    "chance_bacc": 0.5
+  }
+}

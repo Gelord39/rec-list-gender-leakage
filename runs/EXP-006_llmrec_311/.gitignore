@@ -1,0 +1,7 @@
+# Regenerable, large: rebuild with src.rec.llm_retrieval_rec (build-prompts / postprocess)
+# and src.attack.llmrec_aia attack. The raw LLM outputs (responses_*.jsonl) ARE committed.
+prompts_*.jsonl
+*/lists*.jsonl
+*/attack_grid_500/attack_metrics_*.json
+*/llm_aia/preds_*.jsonl
+logs/

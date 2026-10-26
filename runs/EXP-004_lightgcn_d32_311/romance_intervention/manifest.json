@@ -1,0 +1,28 @@
+{
+  "original": {
+    "romance_share": 0.15,
+    "mean_log_pop": 7.138,
+    "n_replaced": 0
+  },
+  "romance_swap": {
+    "romance_share": 0.0,
+    "mean_log_pop": 7.028,
+    "n_replaced": 750
+  },
+  "control_swap_s2024": {
+    "romance_share": 0.15,
+    "mean_log_pop": 7.027,
+    "n_replaced": 750
+  },
+  "control_swap_s2025": {
+    "romance_share": 0.15,
+    "mean_log_pop": 7.028,
+    "n_replaced": 750
+  },
+  "control_swap_s2026": {
+    "romance_share": 0.15,
+    "mean_log_pop": 7.027,
+    "n_replaced": 750
+  },
+  "note": "control arms replace min(#Romance, #non-Romance) films per user; 0 Romance slots per arm had no non-Romance partner"
+}

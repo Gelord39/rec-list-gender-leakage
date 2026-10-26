@@ -1,0 +1,15 @@
+\begin{table*}[t]
+\centering\small
+\caption{Change in effectiveness from the neutral to the gender prompt, paired on the same users, for women and men, and the difference between the two changes (women $-$ men); 95\% bootstrap CIs. No change is significant.}
+\label{tab:effectiveness-change}
+\begin{tabular}{llccc}
+\toprule
+LLM recommender & Metric & Change, women & Change, men & Women $-$ men \\
+\midrule
+GLM-4-9B & HR@10 & $+0.011$ [$-0.038$, $+0.059$] & $-0.020$ [$-0.043$, $+0.004$] & $+0.030$ [$-0.020$, $+0.082$] \\
+ & NDCG@10 & $-0.005$ [$-0.017$, $+0.008$] & $-0.001$ [$-0.007$, $+0.005$] & $-0.004$ [$-0.018$, $+0.010$] \\
+Llama-3.1-8B & HR@10 & $+0.011$ [$-0.048$, $+0.070$] & $+0.002$ [$-0.031$, $+0.033$] & $+0.009$ [$-0.061$, $+0.077$] \\
+ & NDCG@10 & $-0.006$ [$-0.020$, $+0.008$] & $+0.000$ [$-0.008$, $+0.008$] & $-0.006$ [$-0.022$, $+0.010$] \\
+\bottomrule
+\end{tabular}
+\end{table*}

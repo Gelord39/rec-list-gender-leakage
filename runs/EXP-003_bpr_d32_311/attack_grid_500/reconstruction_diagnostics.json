@@ -1,0 +1,29 @@
+{
+  "inversion_u_hat": {
+    "centred_cosine_direct_mean": 0.4374936521053314,
+    "ridge_alpha": 1.0,
+    "linear_r2_ridge_to_u": 0.5934361815452576,
+    "centred_cosine_after_ridge_mean": 0.7160091400146484,
+    "gender_score_pearson_with_true_u": 0.7151283839516497,
+    "transfer_auc_true_u_attacker": 0.7546695402298851,
+    "reid_top1": 0.048,
+    "reid_median_rank": 20.0,
+    "reid_n_candidates": 500,
+    "list_overlap_topk_u_hat": 0.6218
+  },
+  "ld_mean_pool": {
+    "centred_cosine_direct_mean": 0.6208880543708801,
+    "ridge_alpha": 1.0,
+    "linear_r2_ridge_to_u": 0.5982853174209595,
+    "centred_cosine_after_ridge_mean": 0.7110163569450378,
+    "gender_score_pearson_with_true_u": 0.7079298376388432,
+    "transfer_auc_true_u_attacker": 0.7300552026618269,
+    "reid_top1": 0.056,
+    "reid_median_rank": 23.0,
+    "reid_n_candidates": 500
+  },
+  "reference_true_u": {
+    "list_overlap_topk_true_u_no_history_exclusion": 0.4528,
+    "note": "observed lists exclude seen items, so even true u without exclusion does not reproduce them fully"
+  }
+}

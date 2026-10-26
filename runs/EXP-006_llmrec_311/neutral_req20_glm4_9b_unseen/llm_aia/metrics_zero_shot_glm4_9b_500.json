@@ -1,0 +1,50 @@
+{
+  "exp": "list_aia",
+  "style": "zero_shot",
+  "tag": "glm4_9b_500",
+  "backend": "ollama",
+  "model": "glm4:9b",
+  "dry_run": false,
+  "num_ctx": 16384,
+  "lists_path": "runs/EXP-006_llmrec_311/neutral_req20_glm4_9b_unseen/lists.jsonl",
+  "preds_path": "runs/EXP-006_llmrec_311/neutral_req20_glm4_9b_unseen/llm_aia/preds_zero_shot_glm4_9b_500.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-10-01T22:46:54.109339+00:00",
+    "git_commit": null,
+    "system_prompt": "You are an expert profiler. Infer personal attributes from recommendation lists. Follow the output format exactly.",
+    "example_rendered_prompt": "Based ONLY on the following movie recommendation list for one anonymous user, infer the user's gender.\n\nRecommendation list:\n1. Metropolis (1926)\n2. Casablanca (1942)\n3. Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb (1963)\n4. 2001: A Space Odyssey (1968)\n5. Godfather, The (1972)\n6. Godfather: Part II, The (1974)\n7. Psycho (1960)\n8. Schindler's List (1993)\n\nReply with exactly one word: male or female.",
+    "n_shots": 0,
+    "few_shot_examples_used": null
+  },
+  "n_records": 500,
+  "n_parsed": 500,
+  "n_unparsed": 0,
+  "overall": {
+    "n": 500,
+    "accuracy": 0.65,
+    "bacc": 0.5392090139140956,
+    "f1_micro": 0.65,
+    "auc": 0.5821234119782215,
+    "n_scored": 500,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 348,
+      "accuracy": 0.8218390804597702,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 152,
+      "accuracy": 0.2565789473684211,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.696,
+    "chance_bacc": 0.5
+  }
+}

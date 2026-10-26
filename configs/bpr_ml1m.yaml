@@ -1,0 +1,50 @@
+# BPR on preprocessed ML-1M (Phase A defaults from docs/experiment_setup.md)
+# data_path must be the parent of the dataset folder (…/recbole/ml-1m/).
+
+data_path: data/ml-1m/recbole
+dataset: ml-1m
+
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+# Use our temporal LOO splits; do not re-split or re-filter
+benchmark_filename: [train, valid, test]
+load_col:
+  inter: [user_id, item_id, timestamp]
+filter_inter_by_user_or_item: False
+
+# Model
+embedding_size: 32
+
+# Training
+epochs: 100
+train_batch_size: 2048
+learner: adam
+learning_rate: 0.001
+weight_decay: 0.0
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 1
+  alpha: 1.0
+  dynamic: False
+  candidate_num: 0
+
+# Evaluation (full ranking)
+eval_args:
+  group_by: user
+  order: RO
+  mode: full
+metrics: [Hit, NDCG, Recall]
+topk: [5, 10]
+valid_metric: NDCG@10
+eval_batch_size: 4096
+metric_decimal_place: 6
+
+# Early stop
+eval_step: 1
+stopping_step: 10
+
+# Reproducibility
+seed: 2024
+reproducibility: True

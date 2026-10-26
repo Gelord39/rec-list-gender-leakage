@@ -1,0 +1,106 @@
+{
+  "attribute": "gender",
+  "classifier": "mlp",
+  "label_classes": [
+    "female",
+    "male"
+  ],
+  "label_counts": {
+    "female": 152,
+    "male": 348
+  },
+  "n_users": 500,
+  "embedding_dim": 32,
+  "protocol": {
+    "n_splits": 5,
+    "approx_train_test": "80/20 per fold (StratifiedKFold)",
+    "scaler": "StandardScaler",
+    "seed": 2024,
+    "hidden_size": 100,
+    "activation": "relu",
+    "solver": "adam",
+    "max_iter": 500
+  },
+  "baselines": {
+    "majority_bacc": 0.5,
+    "majority_f1_micro": 0.696,
+    "chance_bacc_balanced": 0.5,
+    "chance_auc": 0.5
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5,
+      "f1_micro": 0.62,
+      "f1_macro": 0.49333333333333335,
+      "accuracy": 0.62,
+      "auc": 0.56
+    },
+    {
+      "fold": 1,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.47619047619047616,
+      "f1_micro": 0.6,
+      "f1_macro": 0.4666666666666667,
+      "accuracy": 0.6,
+      "auc": 0.5695238095238095
+    },
+    {
+      "fold": 2,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5619047619047619,
+      "f1_micro": 0.72,
+      "f1_macro": 0.5451591942820013,
+      "accuracy": 0.72,
+      "auc": 0.7371428571428572
+    },
+    {
+      "fold": 3,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5388031790556335,
+      "f1_micro": 0.67,
+      "f1_macro": 0.5268817204301075,
+      "accuracy": 0.67,
+      "auc": 0.5970079476390836
+    },
+    {
+      "fold": 4,
+      "n_train": 400,
+      "n_test": 100,
+      "bacc": 0.5210378681626928,
+      "f1_micro": 0.67,
+      "f1_macro": 0.4937873907040957,
+      "accuracy": 0.67,
+      "auc": 0.6545114539504442
+    }
+  ],
+  "aggregate": {
+    "bacc": {
+      "mean": 0.5195872570627129,
+      "std": 0.02976262211557296
+    },
+    "f1_micro": {
+      "mean": 0.6559999999999999,
+      "std": 0.042237424163885755
+    },
+    "f1_macro": {
+      "mean": 0.505165661083241,
+      "std": 0.02765035811401568
+    },
+    "accuracy": {
+      "mean": 0.6559999999999999,
+      "std": 0.042237424163885755
+    },
+    "auc": {
+      "mean": 0.6236372136512389,
+      "std": 0.06561070506311827
+    }
+  },
+  "input": "list_derived_embedding_mean_pool",
+  "lists_path": "runs/EXP-004_lightgcn_d32_311/lists.jsonl"
+}

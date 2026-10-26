@@ -1,0 +1,50 @@
+{
+  "exp": "list_aia",
+  "style": "zero_shot",
+  "tag": "llama31_8b_500",
+  "backend": "ollama",
+  "model": "llama3.1:8b",
+  "dry_run": false,
+  "num_ctx": 16384,
+  "lists_path": "runs/EXP-006_llmrec_311/gender_hist50_req20_llama31_8b_unseen/lists.jsonl",
+  "preds_path": "runs/EXP-006_llmrec_311/gender_hist50_req20_llama31_8b_unseen/llm_aia/preds_zero_shot_llama31_8b_500.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-10-02T01:25:32.029006+00:00",
+    "git_commit": null,
+    "system_prompt": "You are an expert profiler. Infer personal attributes from recommendation lists. Follow the output format exactly.",
+    "example_rendered_prompt": "Based ONLY on the following movie recommendation list for one anonymous user, infer the user's gender.\n\nRecommendation list:\n1. Big Sleep, The (1946)\n2. Maltese Falcon, The (1941)\n3. Casablanca (1942)\n4. Sunset Blvd. (a.k.a. Sunset Boulevard) (1950)\n5. Rear Window (1954)\n6. North by Northwest (1959)\n7. 12 Angry Men (1957)\n8. Some Like It Hot (1959)\n9. Easy Rider (1969)\n10. Godfather, The (1972)\n\nReply with exactly one word: male or female.",
+    "n_shots": 0,
+    "few_shot_examples_used": null
+  },
+  "n_records": 500,
+  "n_parsed": 500,
+  "n_unparsed": 0,
+  "overall": {
+    "n": 500,
+    "accuracy": 0.708,
+    "bacc": 0.5716122202056866,
+    "f1_micro": 0.708,
+    "auc": 0.7215290381125228,
+    "n_scored": 500,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 348,
+      "accuracy": 0.9195402298850575,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 152,
+      "accuracy": 0.2236842105263158,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.696,
+    "chance_bacc": 0.5
+  }
+}

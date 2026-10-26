@@ -1,0 +1,97 @@
+{
+  "n_shots": 16,
+  "n_female": 4,
+  "n_draws_scored": 2000,
+  "seed_offset": 10000,
+  "n_eligible": 437,
+  "separation_all_draws": {
+    "mean": 0.14850980944940334,
+    "sd": 0.12874558885280332,
+    "p5": -0.06250677258081624,
+    "p95": 0.3501830221436899
+  },
+  "groups": {
+    "low": [
+      {
+        "seed": 11792,
+        "n_female": 4,
+        "separation": -0.22099800237501188
+      },
+      {
+        "seed": 11148,
+        "n_female": 4,
+        "separation": -0.16024682432281923
+      },
+      {
+        "seed": 10302,
+        "n_female": 4,
+        "separation": -0.15290101286083158
+      },
+      {
+        "seed": 11975,
+        "n_female": 4,
+        "separation": -0.15174542126081936
+      },
+      {
+        "seed": 11784,
+        "n_female": 4,
+        "separation": -0.13984950500524518
+      }
+    ],
+    "mid": [
+      {
+        "seed": 11476,
+        "n_female": 4,
+        "separation": 0.14965919605783207
+      },
+      {
+        "seed": 11532,
+        "n_female": 4,
+        "separation": 0.14967509007727653
+      },
+      {
+        "seed": 10744,
+        "n_female": 4,
+        "separation": 0.149949874854297
+      },
+      {
+        "seed": 11673,
+        "n_female": 4,
+        "separation": 0.1509280362798604
+      },
+      {
+        "seed": 10348,
+        "n_female": 4,
+        "separation": 0.15134250999976062
+      }
+    ],
+    "high": [
+      {
+        "seed": 11989,
+        "n_female": 4,
+        "separation": 0.41383066247160866
+      },
+      {
+        "seed": 11234,
+        "n_female": 4,
+        "separation": 0.41527571742862995
+      },
+      {
+        "seed": 10196,
+        "n_female": 4,
+        "separation": 0.426457262770994
+      },
+      {
+        "seed": 11653,
+        "n_female": 4,
+        "separation": 0.42645916640711246
+      },
+      {
+        "seed": 10184,
+        "n_female": 4,
+        "separation": 0.4271501382732216
+      }
+    ]
+  },
+  "note": "separation = mean OOF P(male) of male exemplars - that of female exemplars; LR on rec-list multi-hot, balanced, 5-fold on the train pool"
+}

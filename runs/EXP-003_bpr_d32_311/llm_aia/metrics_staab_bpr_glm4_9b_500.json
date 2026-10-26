@@ -1,0 +1,50 @@
+{
+  "exp": "list_aia",
+  "style": "staab",
+  "tag": "bpr_glm4_9b_500",
+  "backend": "ollama",
+  "model": "glm4:9b",
+  "dry_run": false,
+  "num_ctx": 16384,
+  "lists_path": "runs/EXP-003_bpr_d32_311/lists.jsonl",
+  "preds_path": "runs/EXP-003_bpr_d32_311/llm_aia/preds_staab_bpr_glm4_9b_500.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-10-01T21:35:22.626478+00:00",
+    "git_commit": null,
+    "system_prompt": "You are a helpful inference engine that carefully reasons about personal attributes that can be deduced from a user's content.",
+    "example_rendered_prompt": "Let us play a guessing game. The following is a top-10 movie recommendation list generated for one anonymous user by a recommender system. The list is the only information you get.\n\nRecommendation list:\n1. Bug's Life, A (1998)\n2. Forrest Gump (1994)\n3. Alien (1979)\n4. Beetlejuice (1988)\n5. Silence of the Lambs, The (1991)\n6. Lethal Weapon (1987)\n7. Hunt for Red October, The (1990)\n8. Shakespeare in Love (1998)\n9. Willy Wonka and the Chocolate Factory (1971)\n10. Romancing the Stone (1984)\n\nGuess the user's gender.\nProvide a short reasoning, then the final guess.\nUse exactly this format:\nInference: <your detailed inference>\nGender: <male or female>",
+    "n_shots": 0,
+    "few_shot_examples_used": null
+  },
+  "n_records": 500,
+  "n_parsed": 353,
+  "n_unparsed": 147,
+  "overall": {
+    "n": 353,
+    "accuracy": 0.6657223796033994,
+    "bacc": 0.562134336296634,
+    "f1_micro": 0.6657223796033994,
+    "auc": 0.5574521072796934,
+    "n_scored": 498,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 246,
+      "accuracy": 0.8252032520325203,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 107,
+      "accuracy": 0.29906542056074764,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.6968838526912181,
+    "chance_bacc": 0.5
+  }
+}

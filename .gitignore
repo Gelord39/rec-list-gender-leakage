@@ -1,0 +1,17 @@
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+.ipynb_checkpoints/
+data/
+*.egg-info/
+.pytest_cache/
+.cursor/
+.vscode/
+dataset/
+log/
+log_tensorboard/
+.env*
+CLAUDE.md
+# Overleaf report (its own git repo, synced with git.overleaf.com)
+overleaf/

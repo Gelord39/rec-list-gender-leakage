@@ -1,0 +1,51 @@
+{
+  "exp": "list_aia",
+  "style": "few_shot",
+  "tag": "real_v1",
+  "backend": "ollama",
+  "model": "llama3.2",
+  "dry_run": false,
+  "lists_path": "runs/EXP-003_bpr_d32_311/lists.jsonl",
+  "preds_path": "runs/EXP-003_bpr_d32_311/llm_aia/preds_few_shot_real_v1.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-08-23T20:24:27.060635+00:00",
+    "git_commit": "9309c0a",
+    "system_prompt": "You are an expert profiler. Infer personal attributes from recommendation lists. Follow the output format exactly."
+  },
+  "n_records": 100,
+  "n_parsed": 100,
+  "n_unparsed": 0,
+  "overall": {
+    "n": 100,
+    "accuracy": 0.48,
+    "bacc": 0.6266666666666667,
+    "f1_micro": 0.48,
+    "auc": null,
+    "n_scored": 0,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 75,
+      "accuracy": 0.3333333333333333,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 25,
+      "accuracy": 0.92,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.75,
+    "chance_bacc": 0.5
+  },
+  "reparsed": {
+    "at": "2026-09-20T22:46:11.590639+00:00",
+    "reason": "parse_gender fix: last Gender: line only; non-male/female there = abstention",
+    "labels_changed": 0
+  }
+}

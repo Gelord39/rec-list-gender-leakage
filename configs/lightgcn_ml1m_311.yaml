@@ -1,0 +1,47 @@
+# LightGCN on ML-1M with Stairway-style global temporal 3:1:1 split
+# Compare utility (HR/NDCG) and embedding leakage against BPR run EXP-003.
+
+data_path: data/ml-1m-311/recbole
+dataset: ml-1m
+
+USER_ID_FIELD: user_id
+ITEM_ID_FIELD: item_id
+TIME_FIELD: timestamp
+
+benchmark_filename: [train, valid, test]
+load_col:
+  inter: [user_id, item_id, timestamp]
+filter_inter_by_user_or_item: False
+
+embedding_size: 32
+n_layers: 2
+reg_weight: 1e-05
+require_pow: False
+
+epochs: 100
+train_batch_size: 2048
+learner: adam
+learning_rate: 0.001
+weight_decay: 0.0
+train_neg_sample_args:
+  distribution: uniform
+  sample_num: 1
+  alpha: 1.0
+  dynamic: False
+  candidate_num: 0
+
+eval_args:
+  group_by: user
+  order: RO
+  mode: full
+metrics: [Hit, NDCG, Recall]
+topk: [5, 10]
+valid_metric: NDCG@10
+eval_batch_size: 4096
+metric_decimal_place: 6
+
+eval_step: 1
+stopping_step: 10
+
+seed: 2024
+reproducibility: True

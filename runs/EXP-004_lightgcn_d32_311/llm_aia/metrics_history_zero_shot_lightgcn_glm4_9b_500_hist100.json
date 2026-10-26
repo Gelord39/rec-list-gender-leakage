@@ -1,0 +1,50 @@
+{
+  "exp": "list_aia",
+  "style": "history_zero_shot",
+  "tag": "lightgcn_glm4_9b_500_hist100",
+  "backend": "ollama",
+  "model": "glm4:9b",
+  "dry_run": false,
+  "num_ctx": 8192,
+  "lists_path": "runs/EXP-004_lightgcn_d32_311/lists_hist100.jsonl",
+  "preds_path": "runs/EXP-004_lightgcn_d32_311/llm_aia/preds_history_zero_shot_lightgcn_glm4_9b_500_hist100.jsonl",
+  "input": "watched_history_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-09-20T22:52:46.657240+00:00",
+    "git_commit": null,
+    "system_prompt": "You are an expert profiler. Infer personal attributes from viewing histories. Follow the output format exactly.",
+    "example_rendered_prompt": "Based ONLY on the following list of movies that one anonymous user has watched, infer the user's gender.\n\nWatched movies:\n1. Snow White and the Seven Dwarfs (1937)\n2. Dumbo (1941)\n3. Fantasia (1940)\n4. Peter Pan (1953)\n5. Cinderella (1950)\n6. Sound of Music, The (1965)\n7. Little Shop of Horrors (1986)\n8. Bedknobs and Broomsticks (1971)\n9. Jungle Book, The (1967)\n10. Watership Down (1978)\n11. Pinocchio (1940)\n12. Bambi (1942)\n13. 101 Dalmatians (1961)\n14. Sleeping Beauty (1959)\n15. Charlotte's Web (1973)\n16. Robin Hood (1973)\n17. Sword in the Stone, The (1963)\n18. Rescuers, The (1977)\n19. Face/Off (1997)\n20. Big (1988)\n21. Brazil (1985)\n22. Clockwork Orange, A (1971)\n23. Contact (1997)\n24. Dune (1984)\n25. Ed Wood (1994)\n26. Fargo (1996)\n27. Frighteners, The (1996)\n28. Fifth Element, The (1997)\n29. Fear and Loathing in Las Vegas (1998)\n30. Golden Child, The (1986)\n31. Gladiator (2000)\n32. Groundhog Day (1993)\n33. Interview with the Vampire (1994)\n34. Judge Dredd (1995)\n35. James and the Giant Peach (1996)\n36. L.A. Confidential (1997)\n37. Ladyhawke (1985)\n38. Mary Shelley's Frankenstein (1994)\n39. Lost in Space (1998)\n40. Reservoir Dogs (1992)\n41. Saving Private Ryan (1998)\n42. Star Wars: Episode I - The Phantom Menace (1999)\n43. Stigmata (1999)\n44. Timecop (1994)\n45. Tron (1982)\n46. Total Recall (1990)\n47. Time Bandits (1981)\n48. Twin Peaks: Fire Walk with Me (1992)\n49. Who Framed Roger Rabbit? (1988)\n50. Payback (1999)\n51. Dogma (1999)\n52. Blue Velvet (1986)\n53. Driving Miss Daisy (1989)\n54. Flatliners (1990)\n55. Glory (1989)\n56. Henry V (1989)\n57. Grosse Pointe Blank (1997)\n58. Better Off Dead... (1985)\n59. Broken Arrow (1996)\n60. Rumble in the Bronx (1995)\n61. Alien Nation (1988)\n62. Monty Python and the Holy Grail (1974)\n63. Fish Called Wanda, A (1988)\n64. Stand by Me (1986)\n65. Ghostbusters (1984)\n66. Monty Python's Life of Brian (1979)\n67. Raising Arizona (1987)\n68. And Now for Something Completely Different (1971)\n69. Lock, Stock & Two Smoking Barrels (1998)\n70. Ghostbusters II (1989)\n71. Clue (1985)\n72. Rope (1948)\n73. Weird Science (1985)\n74. Real Genius (1985)\n75. Big Lebowski, The (1998)\n76. Ghost (1990)\n77. Stir of Echoes (1999)\n78. Patriot Games (1992)\n79. Tomorrow Never Dies (1997)\n80. Crow, The (1994)\n81. Rush Hour (1998)\n82. World Is Not Enough, The (1999)\n83. So I Married an Axe Murderer (1993)\n84. Rocky Horror Picture Show, The (1975)\n85. Being John Malkovich (1999)\n86. Risky Business (1983)\n87. Boxing Helena (1993)\n88. Malcolm X (1992)\n89. American Beauty (1999)\n90. Star Trek: Generations (1994)\n91. Star Trek VI: The Undiscovered Country (1991)\n92. Star Trek: The Wrath of Khan (1982)\n93. Star Trek III: The Search for Spock (1984)\n94. Craft, The (1996)\n95. Solaris (Solyaris) (1972)\n96. Iron Giant, The (1999)\n97. Titan A.E. (2000)\n98. Shaft (2000)\n99. X-Men (2000)\n100. Ace Ventura: Pet Detective (1994)\n\nReply with exactly one word: male or female.",
+    "n_shots": 0,
+    "few_shot_examples_used": null
+  },
+  "n_records": 500,
+  "n_parsed": 500,
+  "n_unparsed": 0,
+  "overall": {
+    "n": 500,
+    "accuracy": 0.642,
+    "bacc": 0.6705611010284331,
+    "f1_micro": 0.642,
+    "auc": 0.730452208106473,
+    "n_scored": 500,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 348,
+      "accuracy": 0.5977011494252874,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 152,
+      "accuracy": 0.743421052631579,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.696,
+    "chance_bacc": 0.5
+  }
+}

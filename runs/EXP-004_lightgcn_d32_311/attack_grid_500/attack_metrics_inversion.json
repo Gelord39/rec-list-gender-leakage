@@ -1,0 +1,288 @@
+{
+  "input": "inversion",
+  "description": "recommender inversion u_hat from list + item table, LR trained on u_hat",
+  "lambda_grid_train_cv_auc": {
+    "0.001": 0.6637436029842119,
+    "0.01": 0.664088846593704,
+    "0.1": 0.6643141324116065
+  },
+  "lambda_chosen": 0.1,
+  "reconstruction_diagnostics": {
+    "inversion_u_hat": {
+      "centred_cosine_direct_mean": 0.44974297285079956,
+      "ridge_alpha": 1.0,
+      "linear_r2_ridge_to_u": 0.6530861258506775,
+      "centred_cosine_after_ridge_mean": 0.7569477558135986,
+      "gender_score_pearson_with_true_u": 0.6412274937585045,
+      "transfer_auc_true_u_attacker": 0.6965082425892316,
+      "reid_top1": 0.02,
+      "reid_median_rank": 48.0,
+      "reid_n_candidates": 500,
+      "list_overlap_topk_u_hat": 0.562
+    },
+    "ld_mean_pool": {
+      "centred_cosine_direct_mean": 0.559852123260498,
+      "ridge_alpha": 1.0,
+      "linear_r2_ridge_to_u": 0.599538117647171,
+      "centred_cosine_after_ridge_mean": 0.6853261590003967,
+      "gender_score_pearson_with_true_u": 0.5230227440788106,
+      "transfer_auc_true_u_attacker": 0.6510133091349063,
+      "reid_top1": 0.002,
+      "reid_median_rank": 78.0,
+      "reid_n_candidates": 500
+    },
+    "reference_true_u": {
+      "list_overlap_topk_true_u_no_history_exclusion": 0.5022,
+      "note": "observed lists exclude seen items, so even true u without exclusion does not reproduce them fully"
+    }
+  },
+  "variants": {
+    "lr_default": {
+      "classifier": "lr",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5380747126436782,
+        "f1_macro": 0.5086992977675295,
+        "accuracy": 0.7,
+        "auc": 0.7042214912280701,
+        "recall_male": 0.9511494252873564,
+        "recall_female": 0.125,
+        "pred_male_share": 0.928,
+        "auc_ci95": [
+          0.6550189185586444,
+          0.7497797438934128
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          0.002699908782659433,
+          0.05494457803959346
+        ]
+      }
+    },
+    "lr_balanced": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6316923774954628,
+        "f1_macro": 0.6033822213971072,
+        "accuracy": 0.624,
+        "auc": 0.7042214912280702,
+        "recall_male": 0.6120689655172413,
+        "recall_female": 0.6513157894736842,
+        "pred_male_share": 0.532,
+        "auc_ci95": [
+          0.6554887258603949,
+          0.7495230902543943
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          0.001923803148977199,
+          0.05236641721765847
+        ]
+      }
+    },
+    "lr_balanced_cv": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": 0.01,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6347928009679371,
+        "f1_macro": 0.6010710511255645,
+        "accuracy": 0.618,
+        "auc": 0.7020852238354507,
+        "recall_male": 0.5919540229885057,
+        "recall_female": 0.6776315789473685,
+        "pred_male_share": 0.51,
+        "auc_ci95": [
+          0.6534682196879853,
+          0.7484624385736031
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0019047404331358846,
+          0.03591013792483676
+        ]
+      }
+    },
+    "mlp_default": {
+      "classifier": "mlp",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5432924984875983,
+        "f1_macro": 0.5382428897700062,
+        "accuracy": 0.666,
+        "auc": 0.6222115093768905,
+        "recall_male": 0.8563218390804598,
+        "recall_female": 0.23026315789473684,
+        "pred_male_share": 0.83,
+        "auc_ci95": [
+          0.5660391652811956,
+          0.6678430714638653
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.10664862054797375,
+          -0.005330055973438363
+        ]
+      }
+    },
+    "mlp_balanced": {
+      "classifier": "mlp",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5903281911675742,
+        "f1_macro": 0.5796636428857521,
+        "accuracy": 0.618,
+        "auc": 0.6342161978221414,
+        "recall_male": 0.6609195402298851,
+        "recall_female": 0.5197368421052632,
+        "pred_male_share": 0.606,
+        "auc_ci95": [
+          0.5776277166240295,
+          0.6822424460885399
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.09117528283474077,
+          0.017555931391128807
+        ]
+      }
+    },
+    "svm_rbf_default": {
+      "classifier": "svm_rbf",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5008318209316395,
+        "f1_macro": 0.4212092967317117,
+        "accuracy": 0.692,
+        "auc": 0.6137987749546279,
+        "recall_male": 0.9885057471264368,
+        "recall_female": 0.013157894736842105,
+        "pred_male_share": 0.988,
+        "auc_ci95": [
+          0.557906658554903,
+          0.6666768050551816
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0661616076848586,
+          0.02226476426796169
+        ]
+      }
+    },
+    "svm_rbf_balanced": {
+      "classifier": "svm_rbf",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6243194192377495,
+        "f1_macro": 0.589923355217965,
+        "accuracy": 0.606,
+        "auc": 0.6734819267997579,
+        "recall_male": 0.5775862068965517,
+        "recall_female": 0.6710526315789473,
+        "pred_male_share": 0.502,
+        "auc_ci95": [
+          0.6237021469510741,
+          0.7203510227877361
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.012827211613886155,
+          0.04490845829646204
+        ]
+      }
+    },
+    "svm_linear_default": {
+      "classifier": "svm_linear",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5269585601935874,
+        "f1_macro": 0.4828442188879082,
+        "accuracy": 0.7,
+        "auc": 0.7025767543859649,
+        "recall_male": 0.9683908045977011,
+        "recall_female": 0.08552631578947369,
+        "pred_male_share": 0.952,
+        "auc_ci95": [
+          0.6519726089944108,
+          0.7484914727802053
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0011762550359083715,
+          0.03763265904481702
+        ]
+      }
+    },
+    "svm_linear_balanced": {
+      "classifier": "svm_linear",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6331291591046582,
+        "f1_macro": 0.6051103368176538,
+        "accuracy": 0.626,
+        "auc": 0.7039568209316395,
+        "recall_male": 0.6149425287356322,
+        "recall_female": 0.6513157894736842,
+        "pred_male_share": 0.534,
+        "auc_ci95": [
+          0.6555873504571528,
+          0.7497635062980778
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0013702731419461681,
+          0.038782038150528796
+        ]
+      }
+    }
+  },
+  "protocol": {
+    "split": "fixed_single_split",
+    "attribute": "gender",
+    "label_classes": [
+      "female",
+      "male"
+    ],
+    "score": "LR decision_function, positive = male",
+    "n_train": 3367,
+    "n_test": 500,
+    "seed": 2024,
+    "cv_folds_for_hyperparams": 5,
+    "classifiers": [
+      "lr",
+      "mlp",
+      "svm_rbf",
+      "svm_linear"
+    ],
+    "C_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "lambda_grid": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "n_bootstrap": 1000,
+    "test_lists": "runs/EXP-004_lightgcn_d32_311/lists.jsonl",
+    "train_pool_lists": "runs/EXP-004_lightgcn_d32_311/lists_train_pool.jsonl",
+    "model": "LightGCN",
+    "items_csv": "data/ml-1m-311/splits/items.csv",
+    "text_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "checkpoint": "runs/EXP-004_lightgcn_d32_311/checkpoint/LightGCN-Aug-30-2026_23-00-46.pth",
+    "generated_at_iso": "2026-09-20T17:39:00.931159+00:00",
+    "git_commit": "9b43452"
+  }
+}

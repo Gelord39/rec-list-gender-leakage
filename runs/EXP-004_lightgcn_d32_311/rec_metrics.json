@@ -1,0 +1,30 @@
+{
+  "exp_id": "EXP-004_lightgcn_d32_311",
+  "model": "LightGCN",
+  "config_file": "configs/lightgcn_ml1m_311.yaml",
+  "device": "mps",
+  "seed": 2024,
+  "embedding_size": 32,
+  "best_valid_score": 0.149978,
+  "best_valid_result": {
+    "hit@5": 0.371429,
+    "hit@10": 0.452381,
+    "ndcg@5": 0.161326,
+    "ndcg@10": 0.149978,
+    "recall@5": 0.036837,
+    "recall@10": 0.054253
+  },
+  "test_result": {
+    "hit@5": 0.555396,
+    "hit@10": 0.666187,
+    "ndcg@5": 0.254579,
+    "ndcg@10": 0.233968,
+    "recall@5": 0.029074,
+    "recall@10": 0.047967
+  },
+  "embeddings": {
+    "user_embeddings": "runs/EXP-004_lightgcn_d32_311/user_embeddings.npy",
+    "embedding_dim": 32,
+    "n_users": 3869
+  }
+}

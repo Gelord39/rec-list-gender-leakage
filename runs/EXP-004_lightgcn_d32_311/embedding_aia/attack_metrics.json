@@ -1,0 +1,106 @@
+{
+  "attribute": "gender",
+  "classifier": "mlp",
+  "label_classes": [
+    "female",
+    "male"
+  ],
+  "label_counts": {
+    "female": 1116,
+    "male": 2753
+  },
+  "n_users": 3869,
+  "embedding_dim": 32,
+  "protocol": {
+    "n_splits": 5,
+    "approx_train_test": "80/20 per fold (StratifiedKFold)",
+    "scaler": "StandardScaler",
+    "seed": 2024,
+    "hidden_size": 100,
+    "activation": "relu",
+    "solver": "adam",
+    "max_iter": 500
+  },
+  "baselines": {
+    "majority_bacc": 0.5,
+    "majority_f1_micro": 0.7115533729645903,
+    "chance_bacc_balanced": 0.5,
+    "chance_auc": 0.5
+  },
+  "folds": [
+    {
+      "fold": 0,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.6609588762380669,
+      "f1_micro": 0.7700258397932817,
+      "f1_macro": 0.6766067320783062,
+      "accuracy": 0.7700258397932817,
+      "auc": 0.7835488675298885
+    },
+    {
+      "fold": 1,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.6576505823085625,
+      "f1_micro": 0.7558139534883721,
+      "f1_macro": 0.6698213072535667,
+      "accuracy": 0.7558139534883721,
+      "auc": 0.7873007088619957
+    },
+    {
+      "fold": 2,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.6727067785436996,
+      "f1_micro": 0.7506459948320413,
+      "f1_macro": 0.6803343412360612,
+      "accuracy": 0.7506459948320413,
+      "auc": 0.7912641507898399
+    },
+    {
+      "fold": 3,
+      "n_train": 3095,
+      "n_test": 774,
+      "bacc": 0.684788961038961,
+      "f1_micro": 0.7739018087855297,
+      "f1_macro": 0.698535745047373,
+      "accuracy": 0.7739018087855297,
+      "auc": 0.8035957792207793
+    },
+    {
+      "fold": 4,
+      "n_train": 3096,
+      "n_test": 773,
+      "bacc": 0.6424011414594375,
+      "f1_micro": 0.7529107373868047,
+      "f1_macro": 0.6548663464123333,
+      "accuracy": 0.7529107373868047,
+      "auc": 0.7674357929066449
+    }
+  ],
+  "aggregate": {
+    "bacc": {
+      "mean": 0.6637012679177455,
+      "std": 0.01430815794164008
+    },
+    "f1_micro": {
+      "mean": 0.7606596668572058,
+      "std": 0.009453888001621983
+    },
+    "f1_macro": {
+      "mean": 0.676032894405528,
+      "std": 0.014225446147059244
+    },
+    "accuracy": {
+      "mean": 0.7606596668572058,
+      "std": 0.009453888001621983
+    },
+    "auc": {
+      "mean": 0.7866290598618297,
+      "std": 0.011727521710152069
+    }
+  },
+  "run_dir": "runs/EXP-004_lightgcn_d32_311",
+  "source_rec_metrics": "runs/EXP-004_lightgcn_d32_311/rec_metrics.json"
+}

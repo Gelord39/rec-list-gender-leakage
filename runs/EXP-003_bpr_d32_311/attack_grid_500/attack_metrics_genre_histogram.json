@@ -1,0 +1,333 @@
+{
+  "input": "genre_histogram",
+  "description": "share of ML-1M genres in the rec list (per-movie split evenly across tags)",
+  "genres": [
+    "Action",
+    "Adventure",
+    "Animation",
+    "Children's",
+    "Comedy",
+    "Crime",
+    "Documentary",
+    "Drama",
+    "Fantasy",
+    "Film-Noir",
+    "Horror",
+    "Musical",
+    "Mystery",
+    "Romance",
+    "Sci-Fi",
+    "Thriller",
+    "War",
+    "Western"
+  ],
+  "variants": {
+    "lr_default": {
+      "classifier": "lr",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5892695099818512,
+        "f1_macro": 0.5858260469397147,
+        "accuracy": 0.73,
+        "auc": 0.7105452208106473,
+        "recall_male": 0.9482758620689655,
+        "recall_female": 0.23026315789473684,
+        "pred_male_share": 0.894,
+        "auc_ci95": [
+          0.6606093933299816,
+          0.7578325978263518
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.0646391340463617,
+          -0.013335484901963167
+        ]
+      },
+      "coefficients_standardized": {
+        "Action": 0.3738407450556191,
+        "Adventure": -0.14909273472057938,
+        "Animation": 0.008320113413887734,
+        "Children's": -0.1266256368040133,
+        "Comedy": -0.13265228938093948,
+        "Crime": -0.015385659565122032,
+        "Documentary": -0.07322706441837208,
+        "Drama": -0.14497932102054098,
+        "Fantasy": -0.03949459581185982,
+        "Film-Noir": 0.13810672761342546,
+        "Horror": 0.1919470792564501,
+        "Musical": -0.06271003731170019,
+        "Mystery": -0.049740349672910744,
+        "Romance": -0.17924364715423227,
+        "Sci-Fi": 0.000482410986772614,
+        "Thriller": 0.13114173184849318,
+        "War": -0.06627629379901094,
+        "Western": 0.16523440975433448
+      }
+    },
+    "lr_balanced": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6520341802782819,
+        "f1_macro": 0.6220040122479147,
+        "accuracy": 0.642,
+        "auc": 0.7125113430127041,
+        "recall_male": 0.6264367816091954,
+        "recall_female": 0.6776315789473685,
+        "pred_male_share": 0.534,
+        "auc_ci95": [
+          0.6622682107765256,
+          0.7602319081589632
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.06585067442935823,
+          -0.014746115482891934
+        ]
+      },
+      "coefficients_standardized": {
+        "Action": 0.3660066127037899,
+        "Adventure": -0.139967447553385,
+        "Animation": -0.0014597816531375719,
+        "Children's": -0.11810911273569978,
+        "Comedy": -0.11405021999422334,
+        "Crime": -0.008347319362790285,
+        "Documentary": -0.05940742660272347,
+        "Drama": -0.14847128317731065,
+        "Fantasy": -0.03230821178339666,
+        "Film-Noir": 0.15261793876355487,
+        "Horror": 0.15836427108796516,
+        "Musical": -0.0730507053858612,
+        "Mystery": -0.06268034791956158,
+        "Romance": -0.18468991182420014,
+        "Sci-Fi": 0.006865537493241,
+        "Thriller": 0.13481446932225885,
+        "War": -0.07666774023478085,
+        "Western": 0.15673466802225625
+      }
+    },
+    "lr_balanced_cv": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": 0.1,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6487447065940714,
+        "f1_macro": 0.6195211038961039,
+        "accuracy": 0.64,
+        "auc": 0.7123601028433152,
+        "recall_male": 0.6264367816091954,
+        "recall_female": 0.6710526315789473,
+        "pred_male_share": 0.536,
+        "auc_ci95": [
+          0.6621932765770704,
+          0.7601092454586774
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.05122249007775964,
+          -0.0056759407348508486
+        ]
+      },
+      "coefficients_standardized": {
+        "Action": 0.34698986813924887,
+        "Adventure": -0.12565126953543548,
+        "Animation": -0.0017235123617807544,
+        "Children's": -0.11599025708259354,
+        "Comedy": -0.11368161424901496,
+        "Crime": -0.006979214430532695,
+        "Documentary": -0.05721700399249726,
+        "Drama": -0.1467926234168774,
+        "Fantasy": -0.035320770097891405,
+        "Film-Noir": 0.14422490344636965,
+        "Horror": 0.15690110322208808,
+        "Musical": -0.07280858481892229,
+        "Mystery": -0.056210782903274296,
+        "Romance": -0.18338456824441005,
+        "Sci-Fi": 0.014858804187768224,
+        "Thriller": 0.13645195076067246,
+        "War": -0.07521780504212341,
+        "Western": 0.154355227122415
+      }
+    },
+    "mlp_default": {
+      "classifier": "mlp",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.614450998185118,
+        "f1_macro": 0.6195917791516141,
+        "accuracy": 0.698,
+        "auc": 0.6705421960072595,
+        "recall_male": 0.8275862068965517,
+        "recall_female": 0.40131578947368424,
+        "pred_male_share": 0.758,
+        "auc_ci95": [
+          0.615007564226619,
+          0.7225382728578539
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.11978445539687159,
+          -0.030443733412228575
+        ]
+      }
+    },
+    "mlp_balanced": {
+      "classifier": "mlp",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.6353977616454931,
+        "f1_macro": 0.6048759983186213,
+        "accuracy": 0.624,
+        "auc": 0.6661751361161524,
+        "recall_male": 0.6063218390804598,
+        "recall_female": 0.6644736842105263,
+        "pred_male_share": 0.524,
+        "auc_ci95": [
+          0.6118920725706116,
+          0.7162566100810783
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.12570353646283128,
+          -0.03830934489161622
+        ]
+      }
+    },
+    "svm_rbf_default": {
+      "classifier": "svm_rbf",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5859800362976406,
+        "f1_macro": 0.5812395309882747,
+        "accuracy": 0.728,
+        "auc": 0.6516560798548094,
+        "recall_male": 0.9482758620689655,
+        "recall_female": 0.2236842105263158,
+        "pred_male_share": 0.896,
+        "auc_ci95": [
+          0.5968612313105247,
+          0.7027577506301256
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.09022585022129619,
+          0.006494717379105334
+        ]
+      }
+    },
+    "svm_rbf_balanced": {
+      "classifier": "svm_rbf",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6409180278281912,
+        "f1_macro": 0.617310397612359,
+        "accuracy": 0.642,
+        "auc": 0.7053463399879008,
+        "recall_male": 0.6436781609195402,
+        "recall_female": 0.6381578947368421,
+        "pred_male_share": 0.558,
+        "auc_ci95": [
+          0.6542270253423603,
+          0.7545855652293184
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.05866064854828897,
+          -0.003207605791001479
+        ]
+      }
+    },
+    "svm_linear_default": {
+      "classifier": "svm_linear",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5888535995160314,
+        "f1_macro": 0.5843569319337949,
+        "accuracy": 0.732,
+        "auc": 0.7097890199637024,
+        "recall_male": 0.9540229885057471,
+        "recall_female": 0.2236842105263158,
+        "pred_male_share": 0.9,
+        "auc_ci95": [
+          0.6591704380887802,
+          0.7582464220807433
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.06532379649551268,
+          -0.012983508203583858
+        ]
+      }
+    },
+    "svm_linear_balanced": {
+      "classifier": "svm_linear",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6553236539624925,
+        "f1_macro": 0.6244789117483249,
+        "accuracy": 0.644,
+        "auc": 0.7129083484573503,
+        "recall_male": 0.6264367816091954,
+        "recall_female": 0.6842105263157895,
+        "pred_male_share": 0.532,
+        "auc_ci95": [
+          0.6625944208918428,
+          0.7611685001655555
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.06516673919997366,
+          -0.013718845745617953
+        ]
+      }
+    }
+  },
+  "protocol": {
+    "split": "fixed_single_split",
+    "attribute": "gender",
+    "label_classes": [
+      "female",
+      "male"
+    ],
+    "score": "LR decision_function, positive = male",
+    "n_train": 3367,
+    "n_test": 500,
+    "seed": 2024,
+    "cv_folds_for_hyperparams": 5,
+    "classifiers": [
+      "lr",
+      "mlp",
+      "svm_rbf",
+      "svm_linear"
+    ],
+    "C_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "lambda_grid": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "n_bootstrap": 1000,
+    "test_lists": "runs/EXP-003_bpr_d32_311/lists.jsonl",
+    "train_pool_lists": "runs/EXP-003_bpr_d32_311/lists_train_pool.jsonl",
+    "model": "BPR",
+    "items_csv": "data/ml-1m-311/splits/items.csv",
+    "text_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "checkpoint": "runs/EXP-003_bpr_d32_311/checkpoint/BPR-Aug-17-2026_00-12-47.pth",
+    "generated_at_iso": "2026-09-20T18:19:03.415887+00:00",
+    "git_commit": "9b43452"
+  }
+}

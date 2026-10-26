@@ -1,0 +1,288 @@
+{
+  "input": "inversion",
+  "description": "recommender inversion u_hat from list + item table, LR trained on u_hat",
+  "lambda_grid_train_cv_auc": {
+    "0.001": 0.7138944125472623,
+    "0.01": 0.7153545905909896,
+    "0.1": 0.7170351442015951
+  },
+  "lambda_chosen": 0.1,
+  "reconstruction_diagnostics": {
+    "inversion_u_hat": {
+      "centred_cosine_direct_mean": 0.4374936521053314,
+      "ridge_alpha": 1.0,
+      "linear_r2_ridge_to_u": 0.5934361815452576,
+      "centred_cosine_after_ridge_mean": 0.7160091400146484,
+      "gender_score_pearson_with_true_u": 0.7151283839516497,
+      "transfer_auc_true_u_attacker": 0.7546695402298851,
+      "reid_top1": 0.048,
+      "reid_median_rank": 20.0,
+      "reid_n_candidates": 500,
+      "list_overlap_topk_u_hat": 0.6218
+    },
+    "ld_mean_pool": {
+      "centred_cosine_direct_mean": 0.6208880543708801,
+      "ridge_alpha": 1.0,
+      "linear_r2_ridge_to_u": 0.5982853174209595,
+      "centred_cosine_after_ridge_mean": 0.7110163569450378,
+      "gender_score_pearson_with_true_u": 0.7079298376388432,
+      "transfer_auc_true_u_attacker": 0.7300552026618269,
+      "reid_top1": 0.056,
+      "reid_median_rank": 23.0,
+      "reid_n_candidates": 500
+    },
+    "reference_true_u": {
+      "list_overlap_topk_true_u_no_history_exclusion": 0.4528,
+      "note": "observed lists exclude seen items, so even true u without exclusion does not reproduce them fully"
+    }
+  },
+  "variants": {
+    "lr_default": {
+      "classifier": "lr",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.6139594676346037,
+        "f1_macro": 0.6203055964653903,
+        "accuracy": 0.736,
+        "auc": 0.7603221415607986,
+        "recall_male": 0.9252873563218391,
+        "recall_female": 0.3026315789473684,
+        "pred_male_share": 0.856,
+        "auc_ci95": [
+          0.7151219257358964,
+          0.8064297708972676
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.00434897782116527,
+          0.027110230220871407
+        ]
+      }
+    },
+    "lr_balanced": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.690260133091349,
+        "f1_macro": 0.6546728657098577,
+        "accuracy": 0.672,
+        "auc": 0.760057471264368,
+        "recall_male": 0.6436781609195402,
+        "recall_female": 0.7368421052631579,
+        "pred_male_share": 0.528,
+        "auc_ci95": [
+          0.714140809578992,
+          0.8046196514992645
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.008476985445137109,
+          0.024957079149152513
+        ]
+      }
+    },
+    "lr_balanced_cv": {
+      "classifier": "lr",
+      "balance": "balanced",
+      "C": 0.01,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.6826603145795523,
+        "f1_macro": 0.6469104665825978,
+        "accuracy": 0.664,
+        "auc": 0.7569570477918934,
+        "recall_male": 0.6350574712643678,
+        "recall_female": 0.7302631578947368,
+        "pred_male_share": 0.524,
+        "auc_ci95": [
+          0.712137345317074,
+          0.8034036732546473
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          0.0002051040988369724,
+          0.034809201928753274
+        ]
+      }
+    },
+    "mlp_default": {
+      "classifier": "mlp",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5820099818511797,
+        "f1_macro": 0.5838990845779861,
+        "accuracy": 0.658,
+        "auc": 0.6565146702964308,
+        "recall_male": 0.7758620689655172,
+        "recall_female": 0.3881578947368421,
+        "pred_male_share": 0.726,
+        "auc_ci95": [
+          0.6056314434265696,
+          0.7060775205735136
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.1331798887168014,
+          -0.038731018406439666
+        ]
+      }
+    },
+    "mlp_balanced": {
+      "classifier": "mlp",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.6128629764065335,
+        "f1_macro": 0.6122227392585698,
+        "accuracy": 0.67,
+        "auc": 0.6729809437386571,
+        "recall_male": 0.7586206896551724,
+        "recall_female": 0.46710526315789475,
+        "pred_male_share": 0.69,
+        "auc_ci95": [
+          0.6218771047116636,
+          0.7213192385962884
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.11871694792910288,
+          -0.03202321067177394
+        ]
+      }
+    },
+    "svm_rbf_default": {
+      "classifier": "svm_rbf",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5868118572292801,
+        "f1_macro": 0.5840867992766727,
+        "accuracy": 0.724,
+        "auc": 0.7123790078644887,
+        "recall_male": 0.9367816091954023,
+        "recall_female": 0.23684210526315788,
+        "pred_male_share": 0.884,
+        "auc_ci95": [
+          0.6582364589206939,
+          0.7642979189737911
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.018890976193285107,
+          0.059204204080233906
+        ]
+      }
+    },
+    "svm_rbf_balanced": {
+      "classifier": "svm_rbf",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.683227465214761,
+        "f1_macro": 0.6614583333333333,
+        "accuracy": 0.688,
+        "auc": 0.7266712038717482,
+        "recall_male": 0.6954022988505747,
+        "recall_female": 0.6710526315789473,
+        "pred_male_share": 0.584,
+        "auc_ci95": [
+          0.681724643874644,
+          0.7762476644474221
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.03553984581906816,
+          0.014066295452321518
+        ]
+      }
+    },
+    "svm_linear_default": {
+      "classifier": "svm_linear",
+      "balance": "default",
+      "C": null,
+      "class_weight": null,
+      "metrics": {
+        "bacc": 0.5995538415003024,
+        "f1_macro": 0.6005502195472101,
+        "accuracy": 0.734,
+        "auc": 0.7582614942528735,
+        "recall_male": 0.9425287356321839,
+        "recall_female": 0.2565789473684211,
+        "pred_male_share": 0.882,
+        "auc_ci95": [
+          0.7131236204912292,
+          0.8056856111477385
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.006492950336700478,
+          0.025391481720050835
+        ]
+      }
+    },
+    "svm_linear_balanced": {
+      "classifier": "svm_linear",
+      "balance": "balanced",
+      "C": null,
+      "class_weight": "balanced",
+      "metrics": {
+        "bacc": 0.690260133091349,
+        "f1_macro": 0.6546728657098577,
+        "accuracy": 0.672,
+        "auc": 0.7579022988505747,
+        "recall_male": 0.6436781609195402,
+        "recall_female": 0.7368421052631579,
+        "pred_male_share": 0.528,
+        "auc_ci95": [
+          0.711549866084333,
+          0.802301522062525
+        ],
+        "delta_auc_vs_ld_mean_pool_ci95": [
+          -0.010601393961047315,
+          0.023394033821928097
+        ]
+      }
+    }
+  },
+  "protocol": {
+    "split": "fixed_single_split",
+    "attribute": "gender",
+    "label_classes": [
+      "female",
+      "male"
+    ],
+    "score": "LR decision_function, positive = male",
+    "n_train": 3367,
+    "n_test": 500,
+    "seed": 2024,
+    "cv_folds_for_hyperparams": 5,
+    "classifiers": [
+      "lr",
+      "mlp",
+      "svm_rbf",
+      "svm_linear"
+    ],
+    "C_grid": [
+      0.001,
+      0.01,
+      0.1,
+      1,
+      10
+    ],
+    "lambda_grid": [
+      0.001,
+      0.01,
+      0.1
+    ],
+    "n_bootstrap": 1000,
+    "test_lists": "runs/EXP-003_bpr_d32_311/lists.jsonl",
+    "train_pool_lists": "runs/EXP-003_bpr_d32_311/lists_train_pool.jsonl",
+    "model": "BPR",
+    "items_csv": "data/ml-1m-311/splits/items.csv",
+    "text_model": "sentence-transformers/all-MiniLM-L6-v2",
+    "checkpoint": "runs/EXP-003_bpr_d32_311/checkpoint/BPR-Aug-17-2026_00-12-47.pth",
+    "generated_at_iso": "2026-09-20T18:19:03.415887+00:00",
+    "git_commit": "9b43452"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "exp": "list_aia",
+  "style": "staab",
+  "tag": "lightgcn_llama32_500_lp",
+  "backend": "ollama",
+  "model": "llama3.2",
+  "dry_run": false,
+  "lists_path": "runs/EXP-004_lightgcn_d32_311/lists.jsonl",
+  "preds_path": "runs/EXP-004_lightgcn_d32_311/llm_aia/preds_staab_lightgcn_llama32_500_lp.jsonl",
+  "input": "rec_list_only",
+  "attribute": "gender",
+  "provenance": {
+    "generated_at_iso": "2026-09-13T23:16:21.053066+00:00",
+    "git_commit": "0047db5",
+    "system_prompt": "You are a helpful inference engine that carefully reasons about personal attributes that can be deduced from a user's content.",
+    "example_rendered_prompt": "Let us play a guessing game. The following is a top-10 movie recommendation list generated for one anonymous user by a recommender system. The list is the only information you get.\n\nRecommendation list:\n1. Forrest Gump (1994)\n2. Hunt for Red October, The (1990)\n3. Silence of the Lambs, The (1991)\n4. Lethal Weapon (1987)\n5. Alien (1979)\n6. Predator (1987)\n7. Die Hard 2 (1990)\n8. Bug's Life, A (1998)\n9. Jaws (1975)\n10. Romancing the Stone (1984)\n\nGuess the user's gender.\nProvide a short reasoning, then the final guess.\nUse exactly this format:\nInference: <your detailed inference>\nGender: <male or female>",
+    "few_shot_examples_used": null
+  },
+  "n_records": 500,
+  "n_parsed": 493,
+  "n_unparsed": 7,
+  "overall": {
+    "n": 493,
+    "accuracy": 0.49290060851926976,
+    "bacc": 0.5072771968159825,
+    "f1_micro": 0.49290060851926976,
+    "auc": 0.5144373341657562,
+    "n_scored": 493,
+    "auc_score_definition": "score = P(male)/(P(male)+P(female)) from answer-token logprobs; AUC over users with a score (refusals excluded)"
+  },
+  "by_true_gender": {
+    "male": {
+      "n": 344,
+      "accuracy": 0.47093023255813954,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    },
+    "female": {
+      "n": 149,
+      "accuracy": 0.5436241610738255,
+      "note": "accuracy = fraction of users with true gender=g correctly guessed"
+    }
+  },
+  "baselines": {
+    "majority_label": "male",
+    "majority_accuracy": 0.6977687626774848,
+    "chance_bacc": 0.5
+  },
+  "reparsed": {
+    "at": "2026-09-20T22:46:11.512726+00:00",
+    "reason": "parse_gender fix: last Gender: line only; non-male/female there = abstention",
+    "labels_changed": 0
+  }
+}

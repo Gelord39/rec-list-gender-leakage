@@ -1,0 +1,30 @@
+{
+  "exp_id": "EXP-003_bpr_d32_311",
+  "model": "BPR",
+  "config_file": "configs/bpr_ml1m_311.yaml",
+  "device": "mps",
+  "seed": 2024,
+  "embedding_size": 32,
+  "best_valid_score": 0.154174,
+  "best_valid_result": {
+    "hit@5": 0.342857,
+    "hit@10": 0.438095,
+    "ndcg@5": 0.159787,
+    "ndcg@10": 0.154174,
+    "recall@5": 0.029806,
+    "recall@10": 0.052241
+  },
+  "test_result": {
+    "hit@5": 0.553957,
+    "hit@10": 0.673381,
+    "ndcg@5": 0.263947,
+    "ndcg@10": 0.244842,
+    "recall@5": 0.03038,
+    "recall@10": 0.050071
+  },
+  "embeddings": {
+    "user_embeddings": "runs/EXP-003_bpr_d32_311/user_embeddings.npy",
+    "embedding_dim": 32,
+    "n_users": 3869
+  }
+}
